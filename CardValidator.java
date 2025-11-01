@@ -8,7 +8,8 @@ public class CardValidator {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] parts = line.split(",");
-                if (parts.length == 2 && parts[0].equals(cardNumber) && parts[1].equals(pin)) {
+                // Expecting format: cardNumber,pin,location
+                if (parts.length == 3 && parts[0].equals(cardNumber) && parts[1].equals(pin)) {
                     return true;
                 }
             }
